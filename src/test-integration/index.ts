@@ -62,7 +62,7 @@ async function testFormat(samplesDir: string, format: keyof typeof VIEW_TYPES): 
 
 export async function run(): Promise<void> {
 	// The development extension's own path IS the workspace root.
-	const ext = vscode.extensions.getExtension('silurus.office-file-viewer');
+	const ext = vscode.extensions.getExtension('ahati.vsc-office-file-viewer');
 	const workspaceRoot =
 		ext?.extensionPath ?? vscode.workspace.workspaceFolders?.[0]?.uri.fsPath ?? '';
 	const samplesDir = `${workspaceRoot}/samples`;
