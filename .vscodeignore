@@ -1,0 +1,13 @@
+.vscode/**
+src/**
+node_modules/**
+out/**/*.map
+esbuild.mjs
+tsconfig*.json
+samples/**
+.pi/**
+**/*.ts
+!node_modules/@silurus/ooxml/dist/**
+package-lock.json
+scripts/**
+out/test/**

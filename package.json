@@ -1,0 +1,131 @@
+{
+  "name": "office-file-viewer",
+  "displayName": "Office File Viewer (docx, xlsx, pptx)",
+  "description": "View .docx, .xlsx and .pptx files rendered on canvas with WASM — no Office install or server conversion needed.",
+  "version": "0.1.0",
+  "publisher": "ahati",
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahati/vsc-office-file-viewer"
+  },
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "docx",
+    "xlsx",
+    "pptx",
+    "office",
+    "viewer",
+    "ooxml"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "officeFileViewer.docx",
+        "displayName": "Office Document Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.docx"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "officeFileViewer.xlsx",
+        "displayName": "Office Spreadsheet Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.xlsx"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "officeFileViewer.pptx",
+        "displayName": "Office Presentation Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.pptx"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "officeFileViewer.docx",
+        "displayName": "Office Document Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.docm"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "officeFileViewer.xlsx",
+        "displayName": "Office Spreadsheet Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.xlsm"
+          }
+        ],
+        "priority": "default"
+      },
+      {
+        "viewType": "officeFileViewer.pptx",
+        "displayName": "Office Presentation Viewer",
+        "selector": [
+          {
+            "filenamePattern": "*.pptm"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "configuration": {
+      "title": "Office File Viewer",
+      "properties": {
+        "officeFileViewer.useGoogleFonts": {
+          "type": "boolean",
+          "default": false,
+          "description": "Fetch metric-compatible webfonts and non-Latin script fallbacks (CJK, Arabic, Hebrew, …) from Google Fonts while rendering, so layout matches Office more closely. When off (default) only locally installed system fonts are used and the viewer makes no network requests at all."
+        },
+        "officeFileViewer.enableTextSelection": {
+          "type": "boolean",
+          "default": true,
+          "description": "Overlay a transparent text layer over document pages and slides for native selection and copy."
+        },
+        "officeFileViewer.xlsxShowZoomSlider": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the built-in zoom slider in spreadsheet viewers."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "node ./esbuild.mjs",
+    "watch": "node ./esbuild.mjs --watch",
+    "package": "node ./esbuild.mjs --production",
+    "typecheck": "tsc -p ./ --noEmit && tsc -p tsconfig.webview.json --noEmit",
+    "test": "npm run compile && node ./scripts/run-tests.mjs",
+    "vscode:pretest": "npm run compile"
+  },
+  "devDependencies": {
+    "@silurus/ooxml": "^0.88.0",
+    "@types/node": "^22",
+    "@types/vscode": "^1.90.0",
+    "@vscode/test-electron": "^3.1.0",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.9.2"
+  }
+}
