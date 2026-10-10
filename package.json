@@ -17,6 +17,11 @@
     "Visualization",
     "Other"
   ],
+  "galleryBanner": {
+    "color": "#1E222B",
+    "theme": "dark"
+  },
+  "icon": "icon.png",
   "keywords": [
     "docx",
     "xlsx",
