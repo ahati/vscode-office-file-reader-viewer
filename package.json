@@ -1,14 +1,14 @@
 {
-  "name": "vsc-office-file-viewer",
+  "name": "vscode-office-file-reader-viewer",
   "displayName": "VSCode-Office-File-Reader-Viewer",
   "description": "View .docx, .xlsx and .pptx files rendered on canvas with WASM — no Office install or server conversion needed.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "ahati",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ahati/vsc-office-file-viewer"
+    "url": "https://github.com/ahati/vscode-office-file-reader-viewer"
   },
   "engines": {
     "vscode": "^1.90.0"

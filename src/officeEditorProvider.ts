@@ -53,7 +53,7 @@ export class OfficeEditorProvider implements vscode.CustomReadonlyEditorProvider
 		OfficeEditorProvider.output.appendLine(line);
 		OfficeEditorProvider.events.push(line);
 		if (OfficeEditorProvider.events.length > 200) OfficeEditorProvider.events.shift();
-		console.log(`[office-file-viewer] ${message}`);
+		console.log(`[vscode-office-file-reader-viewer] ${message}`);
 	}
 
 	/** Most recent lifecycle events (newest last); used by tests & debugging. */

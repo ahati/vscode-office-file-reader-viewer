@@ -62,7 +62,7 @@ async function testFormat(samplesDir: string, format: keyof typeof VIEW_TYPES): 
 
 export async function run(): Promise<void> {
 	// The development extension's own path IS the workspace root.
-	const ext = vscode.extensions.getExtension('ahati.vsc-office-file-viewer');
+	const ext = vscode.extensions.getExtension('ahati.vscode-office-file-reader-viewer');
 	const workspaceRoot =
 		ext?.extensionPath ?? vscode.workspace.workspaceFolders?.[0]?.uri.fsPath ?? '';
 	const samplesDir = `${workspaceRoot}/samples`;
@@ -72,5 +72,5 @@ export async function run(): Promise<void> {
 		await testFormat(samplesDir, format);
 		results.push(`OK sample.${format}`);
 	}
-	console.log(`\n=== office-file-viewer integration results ===\n${results.join('\n')}\n`);
+	console.log(`\n=== vscode-office-file-reader-viewer integration results ===\n${results.join('\n')}\n`);
 }
