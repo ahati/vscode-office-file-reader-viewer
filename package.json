@@ -1,6 +1,6 @@
 {
   "name": "vsc-office-file-viewer",
-  "displayName": "Office File Viewer (docx, xlsx, pptx)",
+  "displayName": "VSCode-Office-File-Reader-Viewer",
   "description": "View .docx, .xlsx and .pptx files rendered on canvas with WASM — no Office install or server conversion needed.",
   "version": "0.1.1",
   "publisher": "ahati",
